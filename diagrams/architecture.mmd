@@ -1,0 +1,46 @@
+flowchart LR
+    subgraph User["👤 User"]
+        TG["Telegram App"]
+    end
+
+    subgraph Gateway["🦞 OpenClaw Gateway"]
+        BOT["Telegram Bot\nAdapter"]
+        RT["Agent Runtime\n& Tool Router"]
+    end
+
+    subgraph Agent["🧠 Agnes Agent"]
+        LLM["agnes-1.5-pro\nvia ZenMux API"]
+        subgraph Skills["Skills"]
+            S1["Career\nCoach"]
+            S2["Company\nIntel"]
+            S3["Profile\nBuilder"]
+        end
+    end
+
+    subgraph Tools["🔧 Tools"]
+        WS["web_search\n(Jobs, Salary,\nDocs, News)"]
+        RW["read / write\n(Memory Files)"]
+    end
+
+    subgraph Memory["💾 Memory Store"]
+        subgraph Shared["Shared Data"]
+            J["jobs-latest.md"]
+            C["companies.md"]
+            R["roadmaps/*.md"]
+        end
+        subgraph PerUser["Per-User Data"]
+            P["profile.md"]
+            RM["roadmap.md"]
+            A["analytics.md"]
+        end
+    end
+
+    TG -- "/start /jobs /learn\nresume text" --> BOT
+    BOT --> RT
+    RT --> LLM
+    LLM --> S1 & S2 & S3
+    LLM --> WS
+    LLM --> RW
+    RW --> Shared & PerUser
+    RT -- "Formatted cards\n+ apply links" --> BOT
+    BOT --> TG

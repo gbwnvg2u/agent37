@@ -1,0 +1,26 @@
+flowchart TD
+    A(("User message received"))
+    B(("About to EnterPlanMode?"))
+    C{"Already brainstormed?"}
+    D["Invoke brainstorming skill"]
+    E{"Might any skill apply?"}
+    F["Invoke Skill tool"]
+    G["Announce: 'Using [skill] to [purpose]'"]
+    H{"Has checklist?"}
+    I["Create TodoWrite todo per item"]
+    J["Follow skill exactly"]
+    K(("Respond (including clarifications)"))
+
+    B --> C
+    C -- no --> D
+    C -- yes --> E
+    D --> E
+
+    A --> E
+    E -- "yes, even 1%" --> F
+    E -- "definitely not" --> K
+    F --> G
+    G --> H
+    H -- yes --> I
+    H -- no --> J
+    I --> J

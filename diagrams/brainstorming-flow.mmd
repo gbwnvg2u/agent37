@@ -1,0 +1,26 @@
+flowchart TD
+    A["Explore project context"]
+    B{"Visual questions ahead?"}
+    C["Offer Visual Companion\n(own message, no other content)"]
+    D["Ask clarifying questions"]
+    E["Propose 2-3 approaches"]
+    F["Present design sections"]
+    G{"User approves design?"}
+    H["Write design doc"]
+    I["Spec self-review\n(fix inline)"]
+    J{"User reviews spec?"}
+    K(("Invoke writing-plans skill"))
+
+    A --> B
+    B -- yes --> C
+    B -- no --> D
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G -- "no, revise" --> F
+    G -- yes --> H
+    H --> I
+    I --> J
+    J -- "changes requested" --> H
+    J -- approved --> K

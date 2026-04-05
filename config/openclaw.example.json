@@ -1,0 +1,77 @@
+{
+  "agents": {
+    "defaults": {
+      "workspace": "~/agnes-career-coach/workspace",
+      "model": {
+        "primary": "custom-zenmux-ai/sapiens-ai/agnes-1.5-pro"
+      },
+      "models": {
+        "custom-zenmux-ai/sapiens-ai/agnes-1.5-pro": {}
+      },
+      "pdfMaxPages": 20,
+      "timeoutSeconds": 300
+    }
+  },
+  "gateway": {
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "<your-gateway-token>"
+    },
+    "port": 18789,
+    "bind": "loopback"
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "tools": {
+    "profile": "coding",
+    "media": {
+      "image": { "enabled": true },
+      "audio": { "enabled": true },
+      "video": { "enabled": true }
+    }
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "custom-zenmux-ai": {
+        "baseUrl": "https://zenmux.ai/api/v1",
+        "api": "openai-completions",
+        "apiKey": "<your-zenmux-api-key>",
+        "models": [
+          {
+            "id": "sapiens-ai/agnes-1.5-pro",
+            "name": "sapiens-ai/agnes-1.5-pro (Custom Provider)",
+            "contextWindow": 256000,
+            "maxTokens": 256000,
+            "input": ["text"],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "reasoning": false
+          }
+        ]
+      }
+    }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "botToken": "<your-telegram-bot-token>",
+      "dmPolicy": "open",
+      "allowFrom": ["*"],
+      "customCommands": [
+        { "command": "start", "description": "Meet Agnes — your career intelligence agent" },
+        { "command": "profile", "description": "Build or update your career profile" },
+        { "command": "jobs", "description": "See top job matches with apply links" },
+        { "command": "learn", "description": "Get today's 1% growth action" },
+        { "command": "progress", "description": "View your match % and skill analytics" },
+        { "command": "company", "description": "Get intel on a specific company" }
+      ]
+    }
+  }
+}

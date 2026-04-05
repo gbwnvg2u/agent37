@@ -1,0 +1,25 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Claude Code
+.claude/
+
+# Node
+node_modules/
+
+# Per-user runtime data (generated at runtime, not source code)
+workspace/memory/profile.md
+workspace/memory/roadmap.md
+workspace/memory/analytics.md
+workspace/memory/2026-*.md
+workspace/memory/jobs-latest.md
+workspace/memory/companies.md
+
+# Secrets
+*.env
+config/openclaw.json
