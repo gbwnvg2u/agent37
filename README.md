@@ -1,8 +1,8 @@
-# Agnes Career Coach
+# Agent 37 Career Coach
 
-> Every other agent helps you apply to more jobs. Agnes makes you qualified for better ones.
+> Every other agent helps you apply to more jobs. Agent 37 makes you qualified for better ones.
 
-Agnes is an AI career intelligence agent that scans the market, finds strategic roles, identifies exactly what you're missing, and gives you one 15-minute action every day to close the gap — then verifies you actually learned it.
+Agent 37 is an AI career intelligence agent that scans the market, finds strategic roles, identifies exactly what you're missing, and gives you one 15-minute action every day to close the gap — then verifies you actually learned it.
 
 **1.01^365 = 37.78** — 1% better every day compounds to 37x in a year.
 
@@ -21,12 +21,12 @@ Agnes is an AI career intelligence agent that scans the market, finds strategic 
 
 ## How It Works
 
-Agnes runs on [OpenClaw](https://openclaw.ai), an open-source AI agent framework, and is accessible via Telegram. The agent uses the Agnes Claw Model (`sapiens-ai/agnes-1.5-pro`) via the ZenMux API.
+Agent 37 runs on [OpenClaw](https://openclaw.ai), an open-source AI agent framework, and is accessible via Telegram. The agent uses the Agnes Claw Model (`sapiens-ai/agnes-1.5-pro`) via the ZenMux API.
 
 **Telegram commands:**
 | Command | Description |
 |---------|-------------|
-| `/start` | Meet Agnes |
+| `/start` | Meet Agent 37 |
 | `/profile` | Build or update your career profile |
 | `/jobs` | See top 3 job matches with apply links |
 | `/learn` | Get today's 1% growth action |
@@ -34,8 +34,8 @@ Agnes runs on [OpenClaw](https://openclaw.ai), an open-source AI agent framework
 | `/company <name>` | Get intel on a specific company |
 
 **User flow:**
-1. Send your resume or background → Agnes builds your profile, shows 3 strategic jobs, identifies gaps, and assigns your first micro-action
-2. Complete the 15-min action → Reply to Agnes → She sends a verification question
+1. Send your resume or background → Agent 37 builds your profile, shows 3 strategic jobs, identifies gaps, and assigns your first micro-action
+2. Complete the 15-min action → Reply to Agent 37 → it sends a verification question
 3. Pass verification → Match % goes up, next action assigned
 4. Repeat daily — gaps close, new jobs enter your range, you compound
 
